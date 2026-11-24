@@ -1,0 +1,19 @@
+[
+  {
+    "id": "p1",
+    "limit_cents": 500000,
+    "styles": [
+      "s2",
+      "s3"
+    ],
+    "channel": "平台"
+  },
+  {
+    "id": "p2",
+    "limit_cents": 200000,
+    "styles": [
+      "s5"
+    ],
+    "channel": "门店"
+  }
+]

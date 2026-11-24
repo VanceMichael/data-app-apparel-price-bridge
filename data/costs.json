@@ -1,0 +1,22 @@
+[
+  {
+    "id": "m0",
+    "unit_cents": 40000,
+    "available": "2026-09"
+  },
+  {
+    "id": "m1",
+    "unit_cents": 43500,
+    "available": "2026-09"
+  },
+  {
+    "id": "m2",
+    "unit_cents": 47000,
+    "available": "2026-10"
+  },
+  {
+    "id": "m3",
+    "unit_cents": 50500,
+    "available": "2026-10"
+  }
+]

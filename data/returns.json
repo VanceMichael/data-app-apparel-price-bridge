@@ -1,0 +1,20 @@
+[
+  {
+    "id": "r1",
+    "order": "o40",
+    "qty": 1,
+    "customer_cents": 65000,
+    "platform_reversed_cents": 2000,
+    "fee_reversed_cents": 0,
+    "known": "2026-11-19"
+  },
+  {
+    "id": "r2",
+    "order": "o11",
+    "qty": 1,
+    "customer_cents": 50000,
+    "platform_reversed_cents": 0,
+    "fee_reversed_cents": 1000,
+    "known": "2026-11-02"
+  }
+]

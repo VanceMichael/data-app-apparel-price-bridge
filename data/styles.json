@@ -1,0 +1,37 @@
+[
+  {
+    "id": "s1",
+    "generation": "旧",
+    "fill_g": 180,
+    "material": "普通",
+    "family": "通勤"
+  },
+  {
+    "id": "s2",
+    "generation": "新",
+    "fill_g": 180,
+    "material": "普通",
+    "family": "通勤"
+  },
+  {
+    "id": "s3",
+    "generation": "新",
+    "fill_g": 240,
+    "material": "防风",
+    "family": "通勤"
+  },
+  {
+    "id": "s4",
+    "generation": "旧",
+    "fill_g": 200,
+    "material": "防风",
+    "family": "户外"
+  },
+  {
+    "id": "s5",
+    "generation": "新",
+    "fill_g": 200,
+    "material": "防风",
+    "family": "户外"
+  }
+]

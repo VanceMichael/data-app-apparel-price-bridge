@@ -1,0 +1,259 @@
+{
+  "format_version": 1,
+  "synthetic": true,
+  "tables": {
+    "styles": {
+      "description": "商品实物规格；充绒量为克",
+      "columns": {
+        "id": {
+          "type": "string",
+          "description": "款式编号"
+        },
+        "generation": {
+          "type": "string",
+          "description": "上市代"
+        },
+        "fill_g": {
+          "type": "number",
+          "description": "充绒量"
+        },
+        "material": {
+          "type": "string",
+          "description": "面料"
+        },
+        "family": {
+          "type": "string",
+          "description": "商品系列"
+        }
+      },
+      "refs": {}
+    },
+    "comparability": {
+      "description": "商品人员对可比性的决定；撤销不改变销售事实",
+      "columns": {
+        "id": {
+          "type": "string",
+          "description": "关系编号"
+        },
+        "old": {
+          "type": "string",
+          "description": "旧款"
+        },
+        "new": {
+          "type": "string",
+          "description": "新款"
+        },
+        "state": {
+          "type": "string",
+          "description": "确认或拒绝或撤销"
+        },
+        "known": {
+          "type": "string",
+          "description": "知悉日期"
+        }
+      },
+      "refs": {
+        "old": "styles.id",
+        "new": "styles.id"
+      }
+    },
+    "sales": {
+      "description": "金额为整行人民币分；平台补贴不含客户支付",
+      "columns": {
+        "id": {
+          "type": "string",
+          "description": "原订单行"
+        },
+        "period": {
+          "type": "string",
+          "description": "销售所属月"
+        },
+        "style": {
+          "type": "string",
+          "description": "款式"
+        },
+        "channel": {
+          "type": "string",
+          "description": "渠道"
+        },
+        "qty": {
+          "type": "integer",
+          "description": "件数"
+        },
+        "customer_cents": {
+          "type": "integer",
+          "description": "客户实际支付"
+        },
+        "platform_cents": {
+          "type": "integer",
+          "description": "平台承担"
+        },
+        "brand_cents": {
+          "type": "integer",
+          "description": "品牌优惠"
+        },
+        "material_batch": {
+          "type": "string",
+          "description": "耗用物料批"
+        }
+      },
+      "refs": {
+        "style": "styles.id",
+        "material_batch": "costs.id"
+      }
+    },
+    "costs": {
+      "description": "物料成本为每件分；数量与采购市场报价无直接替代关系",
+      "columns": {
+        "id": {
+          "type": "string",
+          "description": "物料批"
+        },
+        "unit_cents": {
+          "type": "integer",
+          "description": "实际单位成本"
+        },
+        "available": {
+          "type": "string",
+          "description": "投入期"
+        }
+      },
+      "refs": {}
+    },
+    "fees": {
+      "description": "费用是独立对账事实；撤销引用原费用",
+      "columns": {
+        "id": {
+          "type": "string",
+          "description": "费用编号"
+        },
+        "order": {
+          "type": "string",
+          "description": "所属订单行"
+        },
+        "kind": {
+          "type": "string",
+          "description": "扣点或物流"
+        },
+        "amount_cents": {
+          "type": "integer",
+          "description": "费用分"
+        }
+      },
+      "refs": {
+        "order": "sales.id"
+      }
+    },
+    "returns": {
+      "description": "退回关联原单；退款含义不能由商品件数推定",
+      "columns": {
+        "id": {
+          "type": "string",
+          "description": "退款编号"
+        },
+        "order": {
+          "type": "string",
+          "description": "原订单"
+        },
+        "qty": {
+          "type": "integer",
+          "description": "退回件数"
+        },
+        "customer_cents": {
+          "type": "integer",
+          "description": "退客户金额"
+        },
+        "platform_reversed_cents": {
+          "type": "integer",
+          "description": "返还平台补贴"
+        },
+        "fee_reversed_cents": {
+          "type": "integer",
+          "description": "已确认费用退回"
+        },
+        "known": {
+          "type": "string",
+          "description": "知悉日期"
+        }
+      },
+      "refs": {
+        "order": "sales.id"
+      }
+    },
+    "subsidy_pools": {
+      "description": "共享渠道补贴；商品范围按数组精确适用",
+      "columns": {
+        "id": {
+          "type": "string",
+          "description": "池编号"
+        },
+        "limit_cents": {
+          "type": "integer",
+          "description": "补贴总额度"
+        },
+        "styles": {
+          "type": "array",
+          "description": "适用商品"
+        },
+        "channel": {
+          "type": "string",
+          "description": "适用渠道"
+        }
+      },
+      "refs": {}
+    },
+    "campaigns": {
+      "description": "活动确认形成渠道承诺；每件价及门槛为分",
+      "columns": {
+        "id": {
+          "type": "string",
+          "description": "活动编号"
+        },
+        "style": {
+          "type": "string",
+          "description": "商品"
+        },
+        "pool": {
+          "type": "string",
+          "description": "补贴池"
+        },
+        "volume": {
+          "type": "integer",
+          "description": "情景件数"
+        },
+        "coupon_cents": {
+          "type": "integer",
+          "description": "每件券"
+        },
+        "threshold_cents": {
+          "type": "integer",
+          "description": "满减门槛"
+        },
+        "discount_cents": {
+          "type": "integer",
+          "description": "满减额"
+        },
+        "stackable": {
+          "type": "boolean",
+          "description": "允许叠加"
+        },
+        "settlement_floor_cents": {
+          "type": "integer",
+          "description": "最低每件结算"
+        },
+        "reserved_cents": {
+          "type": "integer",
+          "description": "已确认占用"
+        },
+        "state": {
+          "type": "string",
+          "description": "拟议或已确认"
+        }
+      },
+      "refs": {
+        "style": "styles.id",
+        "pool": "subsidy_pools.id"
+      }
+    }
+  }
+}

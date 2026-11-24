@@ -1,0 +1,41 @@
+[
+  {
+    "id": "a",
+    "style": "s2",
+    "pool": "p1",
+    "volume": 60,
+    "coupon_cents": 3000,
+    "threshold_cents": 200000,
+    "discount_cents": 10000,
+    "stackable": true,
+    "settlement_floor_cents": 70000,
+    "reserved_cents": 350000,
+    "state": "已确认"
+  },
+  {
+    "id": "b",
+    "style": "s3",
+    "pool": "p1",
+    "volume": 50,
+    "coupon_cents": 4000,
+    "threshold_cents": 200000,
+    "discount_cents": 12000,
+    "stackable": false,
+    "settlement_floor_cents": 80000,
+    "reserved_cents": 0,
+    "state": "拟议"
+  },
+  {
+    "id": "c",
+    "style": "s5",
+    "pool": "p2",
+    "volume": 20,
+    "coupon_cents": 2000,
+    "threshold_cents": 150000,
+    "discount_cents": 5000,
+    "stackable": true,
+    "settlement_floor_cents": 70000,
+    "reserved_cents": 0,
+    "state": "拟议"
+  }
+]
